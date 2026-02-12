@@ -1,0 +1,20 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+	compatible = "ti,am335x-bone-black";
+
+	fragment@0 {
+		target-path = "/ocp";
+
+		__overlay__ {
+			rtc_test: rtc_test@44e3e000 {
+				compatible = "my,rtc-test";
+
+				reg = <0x44e3e000 0x1000>;
+
+				status = "okay";
+			};
+		};
+	};
+};
